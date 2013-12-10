@@ -45,8 +45,10 @@ def waitfornewchat(s):
             return []
         return acfundecode(res)
 if __name__ =="__main__":
+    print u"房間號碼: "
+    roomid=raw_input()
     s=connect()
-    print "login as ",login(s,9)[0]["nickname"]
+    print "login as ",login(s,roomid)[0]["nickname"].decode("utf8")
     while 1:
         q=keepalive(s)
         for i in q:
@@ -55,7 +57,7 @@ if __name__ =="__main__":
                     if i["type"]=="chatmessage":
                         if i.has_key("content") and i.has_key("snick"):
                             con= i["content"]
-                            print i["snick"]+":",con
+                            print i["snick"].decode("utf8")+":",con
                             engine.speak(con.decode("utf8"))
 
 
