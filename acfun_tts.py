@@ -61,7 +61,7 @@ if __name__ =="__main__":
                     if i["type"]=="chatmessage":
                         if i.has_key("content") and i.has_key("snick"):
                             con= i["content"]
-                            print i["snick"].decode("utf8")+":",con
+                            print i["snick"].decode("utf8")+":",con.decode("utf8")
                             engine.speak(con.decode("utf8"))
 
 
