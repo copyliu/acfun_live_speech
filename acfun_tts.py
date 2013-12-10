@@ -4,6 +4,10 @@ import socket
 from utils import *
 import random
 import time
+
+
+import win32com.client
+
 from dragonfly.engines.engine import get_sapi5_engine
 engine = get_sapi5_engine()
 
