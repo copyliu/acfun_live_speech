@@ -12,7 +12,7 @@ from dragonfly.engines.engine import get_sapi5_engine
 engine = get_sapi5_engine()
 
 
-def connect(ip="113.31.87.90",port=12006):
+def connect(ip="103.244.232.68",port=12006):
 
     s=socket.socket()
     s.settimeout(5)
@@ -49,8 +49,10 @@ def waitfornewchat(s):
             return []
         return acfundecode(res)
 if __name__ =="__main__":
+
     print u"房間號碼: "
     roomid=raw_input()
+    engine.speak(u"開始運作")
     s=connect()
     print "login as ",login(s,roomid)[0]["nickname"].decode("utf8")
     while 1:
